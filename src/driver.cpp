@@ -1,4 +1,4 @@
-#include "adder.hpp"
+#include "basic_arithmetic.hpp"
 #include <vector>
 #include <random>
 
@@ -6,19 +6,26 @@ unsigned int number_of_problems = 10;
 unsigned int correct_answers = 0;
 unsigned int argument_quantity = 2;
 std::random_device generator;
-std::uniform_int_distribution<int> distribution(1, 10);
+std::uniform_int_distribution<int> distribution1(1, 10);
+std::uniform_int_distribution<int> distribution2(0, 1);
 
 int main() {
+    time_t start, end;
+    std::time(&start);
     std::cout << std::endl;
     for (unsigned int idx = 0; idx < number_of_problems; idx++) {
-        int* integer_list{new int[argument_quantity]};
+        void** integer_list{new void*[argument_quantity]};
         for (unsigned int jdx = 0; jdx < argument_quantity; jdx++) {
-            *(integer_list + jdx) = distribution(generator);
+            int* integer = new int(distribution1(generator));
+            integer_list[jdx] = static_cast<void*>(integer);
         }
-        correct_answers += addition_problem(integer_list, argument_quantity);
+        correct_answers += problem_chooser(integer_list, argument_quantity, distribution2(generator));
         delete[] integer_list;
         std::cout << std::endl;
     }
     std::cout << "Number of Correct Answers: " << correct_answers << std::endl;
+    std::time(&end);
+    std::cout << "Took the User " << end - start << " Seconds to Complete." << std::endl;
+    std::cout << "Correct Answers/Second: " << static_cast<double>(correct_answers) / (end - start) << std::endl;
     return 0;
 }
