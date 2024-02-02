@@ -6,8 +6,8 @@ unsigned int number_of_problems = 10;
 unsigned int correct_answers = 0;
 unsigned int argument_quantity = 2;
 std::random_device generator;
-std::uniform_int_distribution<int> distribution1(1, 10);
-std::uniform_int_distribution<int> distribution2(0, 1);
+std::uniform_int_distribution<__float128> distribution1(1, 10);
+std::uniform_int_distribution<__float128> distribution2(0, 2);
 
 int main() {
     time_t start, end;
@@ -16,7 +16,7 @@ int main() {
     for (unsigned int idx = 0; idx < number_of_problems; idx++) {
         void** integer_list{new void*[argument_quantity]};
         for (unsigned int jdx = 0; jdx < argument_quantity; jdx++) {
-            int* integer = new int(distribution1(generator));
+            __float128* integer = new __float128(distribution1(generator));
             integer_list[jdx] = static_cast<void*>(integer);
         }
         correct_answers += problem_chooser(integer_list, argument_quantity, distribution2(generator));

@@ -8,4 +8,6 @@ bool addition_problem(int*& integer_list, unsigned int argument_quantity);
 
 bool subtraction_problem(int*& integer_list, unsigned int argument_quantity);
 
+bool multiplication_problem(int*& integer_list, unsigned int argument_quantity);
+
 #endif
