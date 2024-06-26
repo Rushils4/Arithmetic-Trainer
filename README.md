@@ -1,13 +1,13 @@
-Author: Rushil Shah
+# Author: Rushil Shah
 
-Primary Purpose: Improve Reaction & Response Times to Basic Math Problems While Increasing Accuracy
+# Primary Purpose: Improve Reaction & Response Times to Basic Math Problems While Increasing Accuracy
 
-Currently Implemented Problem Types:
+## Currently Implemented Problem Types:
   - Addition
   - Subtraction
   - Multiplication
     
-Features:
+## Features:
   - Creates & Displays Math Problems
   - Alter Number of Arguments Per Problem
   - Checks Answers & Displays Correct Answer if Wrong
@@ -17,8 +17,8 @@ Features:
 
 
 
-Future:
-  - Intend to Implement Many More Problem Types:
+# Future:
+##  - Intend to Implement Many More Problem Types:
     - Division (with Remainder)
     - Modulo
     - Decimal -> Hexadecimal
@@ -45,7 +45,7 @@ Future:
       - XOR
 
      
-  - Intend to Create App Version through Swift
+##  - Intend to Create App Version through Swift
     - 4 Choices
     - Type in Response
     - Permanent Records
